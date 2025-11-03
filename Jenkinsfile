@@ -10,10 +10,10 @@ pipeline {
 
         stage('Deploy') {
             when {
-                branch 'feature'  
+                branch 'subhash'  
             }
             steps {
-                echo "Deploying to Production (feature branch only)"
+                echo "Deploying to Production (subhash branch only)"
             }
         }
     }
