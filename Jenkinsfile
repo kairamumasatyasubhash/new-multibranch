@@ -1,19 +1,14 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Create and Switch Directory') {
             steps {
-                echo "Building project..."
-            }
-        }
-
-        stage('Deploy') {
-            when {
-                branch 'main'  
-            }
-            steps {
-                echo "Deploying to Production (main branch only)"
+                sh '''
+                    mkdir myfolder         
+                    cd myfolder             
+                    echo "Now inside myfolder" > test.txt
+                    ls                      
+                '''
             }
         }
     }
